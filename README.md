@@ -144,12 +144,28 @@ Adquirir un cliente nuevo cuesta entre 5 y 7 veces más que retener uno existent
 
 ---
 
-## ▶️ Cómo ejecutar el notebook
+## ▶️ Cómo ejecutar
 
-1. Abrir `Proyecto2_EDA_Completo.ipynb` en Google Colab
-2. En la celda de configuración, subir el archivo `kaggle.json` cuando se solicite
-3. Ejecutar todas las celdas en orden (`Runtime → Run all`)
+1. Clonar el repositorio
+2. Abrir cualquier notebook de la carpeta `/EDA` o `/selected_dataset` en Google Colab
+3. Montar Google Drive cuando se solicite, o cargar los CSV directamente desde el repositorio
 
+### Carga de datasets
+
+Los datasets están disponibles en la carpeta `/datasets` del repositorio.  
+En cada notebook se cargan de la siguiente forma:
+
+```python
+#— Desde Google Drive (si tienes los archivos en tu Drive)
+Realizar conexcion con Dirve
+from google.colab import drive
+drive.mount('/content/drive')
+df_bank    = pd.read_csv('/content/drive/MyDrive/ruta/Customer-Churn-Records.csv')
+df_heart   = pd.read_csv('/content/drive/MyDrive/ruta/heart_disease.csv')
+df_game    = pd.read_csv('/content/drive/MyDrive/ruta/games.csv')
+df_spotify = pd.read_csv('/content/drive/MyDrive/ruta/Most_Streamed_Spotify_Songs_2024.csv', encoding='latin-1')
+
+sino, cargar manualmente el archivo csv al colab
 ---
 
 *Proyecto desarrollado como parte del Bootcamp de Data Science & Machine Learning — Skillnest / Sonda*
